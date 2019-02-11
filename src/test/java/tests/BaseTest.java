@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -39,8 +40,9 @@ public class BaseTest {
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,".ui.account.AccountsActivity");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"org.gnucash.android");
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,true);
-        capabilities.setCapability(MobileCapabilityType.APP,
-                "/Users/hiteshs/Documents/go-jek/gopay/gnucash/src/test/resources/app/GnucashAndroid_v2.4.0.apk");
+//        capabilities.setCapability(MobileCapabilityType.APP,
+//                "/Users/hiteshs/Documents/go-jek/gopay/gnucash/src/test/resources/app/GnucashAndroid_v2.4.0.apk");
+        capabilities.setCapability(MobileCapabilityType.APP,new File("src/test/resources/app/GnucashAndroid_v2.4.0.apk").getAbsolutePath());
 
 
         try {
